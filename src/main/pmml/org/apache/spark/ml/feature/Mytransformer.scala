@@ -5,22 +5,17 @@
  */
 package org.apache.spark.ml.feature
 
-import java.util.NoSuchElementException
-
-import scala.collection.mutable
-import scala.language.existentials
-import org.apache.spark.SparkException
 import org.apache.spark.annotation.Since
 import org.apache.spark.ml.Transformer
-import org.apache.spark.ml.attribute.{Attribute, AttributeGroup, NumericAttribute, UnresolvedAttribute}
-import org.apache.spark.ml.linalg.{Vector, VectorUDT, Vectors}
-import org.apache.spark.ml.param.{Param, ParamMap, ParamValidators}
+import org.apache.spark.ml.linalg.VectorUDT
+import org.apache.spark.ml.param.ParamMap
 import org.apache.spark.ml.param.shared._
 import org.apache.spark.ml.util._
-import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.sql.{DataFrame, Dataset, Row}
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
+import org.apache.spark.sql.{DataFrame, Dataset}
+
+import scala.language.existentials
 //import org.apache.spark.annotation.Since
 
 // 一定要有HasOutputCol，jpmml-spark里FeatureConverter.class的registerFeatures函数会用到，不然会报错
